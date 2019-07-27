@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Sans&display=swap" rel="stylesheet">
+
+    {% if title %}
+        <title>K A I Z E N  I.T. THOUGHTS - {{ title }}</title>
+    {% else %}
+        <title>K A I Z E N  I.T. THOUGHTS</title>
+    {% endif %}
+</head>
+<body>
+    <div class="header">
+      <img class="logo" src="{{ url_for('static', filename='images/paul3.png') }}" alt="Paul's Logo">
+      <div id="main-header-div">
+        <h1 id="main-header">KAIZEN IT THOUGHTS</h1>
+      </div>
+      <div class="header-right">
+        <a href="{{ url_for('home') }}">HOME</a>
+        <a href="#">ABOUT</a>
+        <a href="{{ url_form('contact') }}">CONTACT</a>
+      </div>
+    </div>
+    {% block content %}{% endblock %}
+    {% if content %}
+        <h1> {{ content }} </h1>
+    {% endif %}
+
+</body>
+</html>
