@@ -1,0 +1,6 @@
+.idea
+/venv
+venv
+site.db
+/env
+env
